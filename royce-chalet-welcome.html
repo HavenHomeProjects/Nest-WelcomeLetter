@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royce Chalet — Welcome Letter</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --warm-white: #FDF9F4;
+    --ink: #1C1712;
+    --muted: #7A6F63;
+    --gold: #B5924C;
+    --gold-light: #D4B07A;
+    --rule: #DDD5C8;
+    --accent-bg: #F0EAE0;
+    --green: #2D5A27;
+  }
+
+  body {
+    background: #E8E0D4;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 48px 16px;
+  }
+
+  .paper {
+    background: var(--warm-white);
+    max-width: 700px;
+    width: 100%;
+    padding: 72px 64px 64px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.08), 0 32px 64px rgba(0,0,0,0.06);
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .paper::before {
+    content: "RC";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 220px;
+    font-weight: 300;
+    color: rgba(181,146,76,0.05);
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -8px;
+    line-height: 1;
+  }
+
+  .top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  }
+
+  /* HEADER */
+  .header { text-align: center; margin-bottom: 40px; animation: fadeUp 0.8s 0.1s ease both; }
+
+  .logo-mark { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-bottom: 20px; }
+  .logo-icon { width: 48px; height: 48px; }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300;
+    letter-spacing: 6px; text-transform: uppercase; color: var(--ink);
+  }
+
+  .brand-parent { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+
+  .header-rule { display: flex; align-items: center; gap: 16px; margin: 24px auto 0; max-width: 300px; }
+  .header-rule::before, .header-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .header-rule span { color: var(--gold); font-size: 14px; }
+
+  /* META */
+  .meta { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; animation: fadeUp 0.8s 0.2s ease both; }
+  .meta-date { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .meta-ref { font-size: 11px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+  .meta-ref strong { display: block; color: var(--ink); font-weight: 400; }
+
+  /* BODY */
+  .body-section { animation: fadeUp 0.8s 0.3s ease both; }
+
+  .salutation { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 20px; }
+
+  p { font-size: 14.5px; line-height: 1.85; color: #3D3630; margin-bottom: 18px; font-weight: 300; }
+
+  /* RESERVATION CARD */
+  .res-card { background: var(--accent-bg); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 32px 0; animation: fadeUp 0.8s 0.4s ease both; }
+  .res-card-title { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 20px; }
+
+  .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; }
+
+  .res-field label { display: block; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; font-weight: 400; }
+  .res-field span { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: var(--ink); line-height: 1.3; }
+  .res-field.full { grid-column: 1 / -1; }
+
+  .confirmed-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: #fff; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 12px; margin-top: 20px; font-weight: 400; }
+  .confirmed-badge::before { content: '✓'; font-size: 11px; }
+
+  /* KEYCODE NOTICE */
+  .keycode-notice {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: #1C1712; color: #FAF6EF;
+    padding: 20px 24px; margin: 32px 0;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+
+  .keycode-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+
+  .keycode-text { }
+  .keycode-text strong { display: block; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); font-weight: 400; margin-bottom: 6px; }
+  .keycode-text p { font-size: 13px; color: #E8E0D4; margin: 0; line-height: 1.6; font-weight: 300; }
+
+  /* AMENITIES */
+  .amenities { margin: 28px 0; animation: fadeUp 0.8s 0.5s ease both; }
+  .amenities-title { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
+
+  .amenities-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .amenities-list li { font-size: 13px; color: #3D3630; padding-left: 16px; position: relative; line-height: 1.6; }
+  .amenities-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 12px; }
+
+  /* DIRECTIONS */
+  .directions { margin: 32px 0; animation: fadeUp 0.8s 0.55s ease both; }
+  .directions-title { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; font-weight: 400; }
+
+  .directions-header {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--accent-bg); padding: 14px 20px; margin-bottom: 16px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+
+  .dir-from-to { font-size: 12px; color: var(--muted); }
+  .dir-from-to strong { color: var(--ink); font-weight: 400; font-family: 'Cormorant Garamond', serif; font-size: 15px; }
+  .dir-arrow { color: var(--gold); font-size: 16px; }
+
+  .dir-meta { font-size: 11px; color: var(--muted); text-align: right; }
+  .dir-meta strong { display: block; color: var(--ink); font-weight: 400; font-size: 13px; }
+
+  .dir-steps { list-style: none; counter-reset: step; }
+
+  .dir-steps li {
+    counter-increment: step;
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13.5px; color: #3D3630; line-height: 1.6;
+  }
+
+  .dir-steps li:last-child { border-bottom: none; }
+
+  .dir-steps li::before {
+    content: counter(step);
+    display: flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; min-width: 22px;
+    background: var(--gold); color: #fff;
+    font-size: 10px; font-weight: 400; letter-spacing: 0.5px;
+    margin-top: 2px; flex-shrink: 0;
+  }
+
+  .dir-steps li span.road { font-weight: 400; color: var(--ink); }
+  .dir-steps li span.dist { margin-left: auto; font-size: 11px; color: var(--muted); padding-left: 12px; white-space: nowrap; min-width: 60px; text-align: right; }
+
+  /* SIGN OFF */
+  .signoff { margin-top: 40px; animation: fadeUp 0.8s 0.6s ease both; }
+  .signoff p { margin-bottom: 8px; }
+
+  .signature { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; color: var(--ink); margin: 16px 0 2px; font-weight: 300; }
+  .signoff-role { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+
+  /* FOOTER */
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; animation: fadeUp 0.8s 0.7s ease both; }
+
+  .footer-col { font-size: 10px; line-height: 1.8; color: var(--muted); letter-spacing: 0.5px; }
+  .footer-col .col-label { font-size: 8.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 4px; }
+  .footer-col a { color: var(--muted); text-decoration: none; }
+  .footer-col a:hover { color: var(--gold); }
+
+  @media (max-width: 560px) {
+    .paper { padding: 48px 24px 40px; }
+    .res-grid { grid-template-columns: 1fr; }
+    .amenities-list { grid-template-columns: 1fr; }
+    .meta { flex-direction: column; gap: 8px; }
+    .meta-ref { text-align: left; }
+    .footer { grid-template-columns: 1fr; }
+    .directions-header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .dir-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+  <div class="top-bar"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-mark">
+      <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 6 L44 26 H36 V42 H12 V26 H4 Z" stroke="#B5924C" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <path d="M18 42 V32 H30 V42" stroke="#B5924C" stroke-width="1.5" fill="none"/>
+        <circle cx="24" cy="20" r="2.5" fill="#B5924C"/>
+        <path d="M20 10 L24 6 L28 10" stroke="#D4B07A" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="brand-name">Royce Chalet</div>
+      <div class="brand-parent">A Haven Homes Collection</div>
+    </div>
+    <div class="header-rule"><span>✦</span></div>
+  </div>
+
+  <!-- META -->
+  <div class="meta">
+    <div class="meta-date">Sunday, May 10, 2026</div>
+    <div class="meta-ref">
+      <span>Reservation No.</span>
+      <strong>RCH-20260510-0847</strong>
+    </div>
+  </div>
+
+  <!-- OPENING -->
+  <div class="body-section">
+    <div class="salutation">Dear Ms. Lobo,</div>
+    <p>
+      On behalf of the Fernandez family and everyone at Royce Chalet, it is our sincerest pleasure to welcome you. We have been looking forward to your arrival, and we are delighted that you have chosen to spend this time with us.
+    </p>
+    <p>
+      Your reservation has been confirmed in full, and every detail has been prepared in anticipation of your stay. We hope your time here will be restful, unhurried, and quietly memorable — precisely as it should be.
+    </p>
+  </div>
+
+  <!-- RESERVATION CARD -->
+  <div class="res-card">
+    <div class="res-card-title">Reservation Details</div>
+    <div class="res-grid">
+      <div class="res-field">
+        <label>Guest</label>
+        <span>Glorianne Lobo</span>
+      </div>
+      <div class="res-field">
+        <label>Room</label>
+        <span>The Nest</span>
+      </div>
+      <div class="res-field">
+        <label>Check-In</label>
+        <span>Sunday, May 10, 2026</span>
+      </div>
+      <div class="res-field">
+        <label>Arrival Time</label>
+        <span>Flexible — anytime</span>
+      </div>
+      <div class="res-field full">
+        <label>Address</label>
+        <span>51 Royce Avenue, Brampton, Ontario, Canada</span>
+      </div>
+    </div>
+    <div class="confirmed-badge">Reservation Confirmed</div>
+  </div>
+
+  <!-- KEYCODE NOTICE -->
+  <div class="keycode-notice">
+    <div class="keycode-icon">🔑</div>
+    <div class="keycode-text">
+      <strong>Entry Information</strong>
+      <p>Upon arrival, a private entry code will be provided to you for access to the property. Please do not hesitate to reach out ahead of time if you have any questions regarding entry or arrival logistics.</p>
+    </div>
+  </div>
+
+  <!-- DURING YOUR STAY -->
+  <div class="amenities">
+    <div class="amenities-title">During Your Stay</div>
+    <ul class="amenities-list">
+      <li>In-room climate control</li>
+      <li>Complimentary high-speed Wi-Fi</li>
+      <li>Fresh linens &amp; bedding</li>
+      <li>Access to all areas of the property</li>
+      <li>Laundry service available</li>
+      <li>Upgraded local health &amp; safety standards</li>
+    </ul>
+  </div>
+
+  <!-- DIRECTIONS -->
+  <div class="directions">
+    <div class="directions-title">Directions to Royce Chalet</div>
+
+    <div class="directions-header">
+      <div class="dir-from-to">
+        <strong>112 Sandy Haven Drive</strong><br>Scarborough, ON M1W 3H9
+      </div>
+      <div class="dir-arrow">→</div>
+      <div class="dir-from-to">
+        <strong>51 Royce Avenue</strong><br>Brampton, ON
+      </div>
+      <div class="dir-meta">
+        <strong>~42 km · approx. 40 min</strong>
+        via Hwy 401 W &amp; Hwy 410 N
+      </div>
+    </div>
+
+    <ol class="dir-steps">
+      <li>
+        Head south on Sandy Haven Drive toward Warden Avenue.<span class="dist">0.3 km</span>
+      </li>
+      <li>
+        Turn right onto <span class="road">Warden Avenue</span> heading south toward the on-ramp.<span class="dist">0.8 km</span>
+      </li>
+      <li>
+        Merge onto <span class="road">Highway 401 West</span> — stay in the express lanes and continue westbound through Toronto.<span class="dist">~28 km</span>
+      </li>
+      <li>
+        Take the exit for <span class="road">Highway 410 North</span> (toward Brampton). Keep right at the fork to stay on Hwy 410 N.<span class="dist">~9 km</span>
+      </li>
+      <li>
+        Take the exit for <span class="road">Bovaird Drive West</span>. Turn left (west) at the light onto Bovaird Drive West.<span class="dist">2 km</span>
+      </li>
+      <li>
+        Turn left onto <span class="road">Royce Avenue</span>. Number 51 will be on your right.<span class="dist">0.4 km</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="body-section">
+    <p>
+      The Nest has been thoughtfully prepared for your arrival. Fresh linens have been dressed, and the room has been aired in anticipation of your visit — a quiet gesture of our hospitality.
+    </p>
+    <p>
+      Should you have any questions before your arrival, or any requests you would like arranged in advance, please do not hesitate to reach out. We look forward to receiving you at Royce Chalet.
+    </p>
+  </div>
+
+  <!-- SIGN OFF -->
+  <div class="signoff">
+    <p>With warm regards,</p>
+    <div class="signature">The Fernandez Family</div>
+    <div class="signoff-role">Board of <del style="color:#9A8F85; text-decoration-color:#B5924C;">Guest</del> Family Experience · Royce Chalet</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-col">
+      <span class="col-label">Address</span>
+      51 Royce Avenue<br>
+      Brampton, Ontario<br>
+      Canada
+    </div>
+    <div class="footer-col">
+      <span class="col-label">Contact</span>
+      <a href="mailto:shop@mailus.info">shop@mailus.info</a><br>
+      <a href="tel:+13654005385">365-400-5385</a>
+    </div>
+    <div class="footer-col">
+      <span class="col-label">Property</span>
+      Royce Chalet<br>
+      A Haven Homes Collection
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
